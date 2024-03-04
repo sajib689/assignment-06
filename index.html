@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sajib</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/c815c680d6.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
     <style>
         .text-gradient {
             background: linear-gradient(to right, #00bcd4, #2196f3); /* Adjust color values as needed */
@@ -28,80 +29,74 @@
         .custom-margin {
         margin-inline-end: 22rem;
         }
+        .avatar.offline::before {
+          background-color: red !important;
+        }
     </style>
 </head>
 <body class="font">
     <!-- header navbar -->
-    <!-- <div class="navbar bg-base-100 container mx-auto">
-        <div class="flex-1">
-          <a class="btn btn-ghost text-4xl">SaJib</a>
-        </div>
-        <div>
-            <div class="me-3 md:d-block hidden">
-                <div class="tooltip lg:tooltip tooltip-bottom" data-tip="hello">
-                    <button class="btn rounded-full"><i class="fa-solid fa-house"></i></button>
-                  </div>
-                <div class="tooltip lg:tooltip tooltip-bottom" data-tip="hello">
-                    <button class="btn rounded-full"><i class="fa-solid fa-pencil"></i></button>
-                  </div>
-                <div class="tooltip lg:tooltip tooltip-bottom" data-tip="edit">
-                    <button class="btn rounded-full"><i class="fa-solid fa-user-plus"></i></button>
-                  </div>
-                <div class="tooltip lg:tooltip tooltip-bottom" data-tip="add">
-                    <button class="btn rounded-full"><i class="fa-regular fa-flag"></i></button>
-                  </div>
-            </div>
-          
-              <div>
-                <button class="btn bg-[#797DFC] rounded-xl text-white">Sign In</button>
-              </div>
-           </div>
-        </div>
-            
-          </div>
-        </div>
-      </div> -->
-<!-- start -->
-
 <div class="navbar bg-base-100 container mx-auto">
-  <div class="flex-1">
-    <a class="btn btn-ghost text-4xl">SaJib</a>
-  </div>
-  <div class="flex-none gap-2">
-    <div class="form-control">
-      <div class="me-3">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </div>
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
         <div class="tooltip lg:tooltip tooltip-bottom" data-tip="hello">
-            <button class="btn rounded-full"><i class="fa-solid fa-house"></i></button>
-          </div>
-        <div class="tooltip lg:tooltip tooltip-bottom" data-tip="hello">
+          <button class="btn rounded-full"><i class="fa-solid fa-house"></i></button>
+        </div>
+        
+        <li>
+          <div class="tooltip lg:tooltip tooltip-bottom" data-tip="hello">
             <button class="btn rounded-full"><i class="fa-solid fa-pencil"></i></button>
           </div>
-        <div class="tooltip lg:tooltip tooltip-bottom" data-tip="edit">
+        </li>
+        <li>
+          <div class="tooltip lg:tooltip tooltip-bottom" data-tip="edit">
             <button class="btn rounded-full"><i class="fa-solid fa-user-plus"></i></button>
           </div>
-        <div class="tooltip lg:tooltip tooltip-bottom" data-tip="add">
+        </li>
+        <li>
+          <div class="tooltip lg:tooltip tooltip-bottom" data-tip="add">
             <button class="btn rounded-full"><i class="fa-regular fa-flag"></i></button>
           </div>
-    </div>
-    </div>
-    <div class="dropdown dropdown-end">
-      <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-        <div class="w-10 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-        </div>
-      </div>
-      <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-        <li>
-          <a class="justify-between">
-            Profile
-            <span class="badge">New</span>
-          </a>
         </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li>
+          <button class="btn bg-[#797DFC] rounded-xl text-white">Sign In</button>
+        </li>
       </ul>
     </div>
+    <a class="btn btn-ghost text-4xl">SaJib</a>
   </div>
+  <div class="navbar-end hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li>
+        <div class="tooltip lg:tooltip tooltip-bottom" data-tip="home">
+        <button class="btn rounded-full"><i class="fa-solid fa-house"></i></button>
+      </div>
+    </li>
+      <li>
+        <div class="tooltip lg:tooltip tooltip-bottom" data-tip="update">
+          <button class="btn rounded-full"><i class="fa-solid fa-pencil"></i></button>
+        </div>
+      </li>
+      <li>
+        <div class="tooltip lg:tooltip tooltip-bottom" data-tip="edit">
+          <button class="btn rounded-full"><i class="fa-solid fa-user-plus"></i></button>
+        </div>
+      </li>
+      <li>
+        <div class="tooltip lg:tooltip tooltip-bottom" data-tip="add">
+          <button class="btn rounded-full"><i class="fa-regular fa-flag"></i></button>
+        </div>
+      </li>
+      <li>
+        <button class="btn bg-[#797DFC] rounded-xl text-white">Sign In</button>
+      </li>
+    </ul>
+  </div>
+  
 </div>
     <!-- header navbar end -->
     <!-- hero area start -->
@@ -109,17 +104,21 @@
     <div class="hero bg bg-cover h-[500px] md:h-[80vh] mt-[50px] container mx-auto rounded-2xl" style="background-image: url('./images/bgbanner.png');">
         <div class="hero-content items-center flex-col-reverse lg:flex-row-reverse justify-between">
             <div class="h-[100px] md:w-[250px] w-[210px] md:h-[288px] bg-white p-30 md:p-11 me-[450px] md:me-[0px] rounded-lg">
-                <div class="flex text-[#12132DCC] p-1">
+                <div class="flex text-[#12132DCC] p-1 justify-between">
                     <p>Registered Users</p>
                     <p class="ms-2">01</p>
                 </div>
-                <div class="flex text-[#12132DCC]  p-1">
-                    <p>Registered Users</p>
-                    <p class="ms-2">02</p>
+                <div class="flex text-[#12132DCC]  p-1 justify-between">
+                    <p>Forum</p>
+                    <p class="ms-2">05</p>
                 </div>
-                <div class="flex text-[#12132DCC]  p-1">
-                    <p>Registered Users</p>
-                    <p class="ms-2">03</p>
+                <div class="flex text-[#12132DCC]  p-1 justify-between">
+                    <p>Topics</p>
+                    <p class="ms-2">01</p>
+                </div>
+                <div class="flex text-[#12132DCC]  p-1 justify-between">
+                    <p>Replies</p>
+                    <p class="ms-2">01</p>
                 </div>
             </div>
             <div class="custom-margin">
@@ -145,24 +144,25 @@
         </div>
 
         <!-- card area start -->
-        <div class="flex-row md:flex  mt-20">
+        <div class="flex-row md:flex m-3  mt-20">
             <div id="card-container" class=" ms-0 md:ms-10">
                 <!-- card append from js file -->
             </div>
-            <div class="">
+            <div class="bg-[#12132D0D] rounded-lg">
                 <!-- data show area -->
-                <div class="flex items-center justify-between">
+                <div class="ms-0 md:ms-10 w-[300px] md:w-[415px] flex items-center justify-between">
                     <div>
-                        <h1 class="text-[20px] font-[700]">Title</h1>
+                        <h1 class="text-[20px] font-[700] ms-3">Title</h1>
                     </div>
-                    <div class="ms-4 md:ms-48 flex justify-center items-center">
+                    
+                    <div class="ms-4 mt-5 md:ms-[170px] flex justify-center items-center">
                         <i class="fa-solid fa-check text-[#3DCE09]"></i>
                         <p>Mark as read ( <span id="count-message">0</span> )</p>
                     </div>
                 </div>
-
+                <hr>
                 <!-- data load -->
-                <div id="container" class=" ">
+                <div id="container">
                     <!-- display the data in js file -->
                 </div>
             </div>

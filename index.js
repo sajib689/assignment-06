@@ -18,11 +18,12 @@ const loadDiscussData = (category = '') => {
     .then((data) => {
       const cardContainer = document.getElementById('card-container')
       cardContainer.textContent = ''
+      
         data.posts.map(post => {
             // console.log(post)
            
             const div = document.createElement('div')
-            div.classList.add('mt-5','card', 'card-side', 'bg-base-100', 'shadow-xl');
+            div.classList.add('mt-5','bg-[#F3F3F5]','card', 'card-side', 'bg-base-100', 'shadow-xl');
             div.innerHTML = `
             
             <div>
@@ -68,7 +69,7 @@ const loadDiscussData = (category = '') => {
                         </div>
 
                         <div class="card-actions justify-end">
-                        <button onClick="handleGetPostData('${post?.title}', ${post?.view_count})" class="btn bg-[#10B981] text-white rounded-full"><i class="fa-regular fa-envelope-open"></i></button>
+                        <button onClick="handleGetPostData('${post?.title.replace(/'/g, '')}', ${post?.view_count})" class="btn bg-[#10B981] text-white rounded-full"><i class="fa-regular fa-envelope-open"></i></button>
                       </div>
                       </div>
                     </div>
@@ -80,20 +81,25 @@ const loadDiscussData = (category = '') => {
         
         
     })
-    toggleLoadingSpinner(false)
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    })
+    .finally(() => {
+      toggleLoadingSpinner(false);
+    });
 }
 let count = 0
 const handleGetPostData = (title, view) => {
-  console.log(title, view);
+ 
   const container = document.getElementById('container')
   const div = document.createElement('div');
   count++
   const counter = document.getElementById('count-message')
   counter.innerText = `${count}`
-  div.classList.add('flex','justify-center','items-center')
+  div.classList.add('ms-4','w-[300px]','md:w-[415px]','flex','mb-3','bg-white','p-3', 'rounded-lg','justify-center','items-center')
   div.innerHTML = `
-    <h1 class="text-[15px] font-[800]">${title}</h1>
-    <div class='md:ms-48 flex justify-center items-center'>
+    <h1 class="text-[15px] font-[800] md:me-28">${title}</h1>
+    <div class=' flex justify-between'>
       <i class="fa-regular fa-eye"></i>
       <p class='ms-1 text-[16px]'>${view}</p>
     </div>
@@ -118,24 +124,23 @@ const loadLatestData = () => {
 const displayLatestData= (news) => {
   const newsContainer = document.getElementById('newsContainer')
   news.map(newsItem => {
-    // console.log(newsItem)
     const div = document.createElement('div')
     div.classList.add('card', 'card-compact', 'w-96', 'bg-base-100', 'shadow-xl')
     div.innerHTML = `
     <figure><img src="${newsItem.cover_image}" alt="Shoes" /></figure>
           <div class="card-body">
-          <p class='text-[#12132D99]'><i class="fa-regular fa-calendar me-1"></i>${newsItem.author.posted_date}</p>
+          <p class='text-[#12132D99]'><i class="fa-regular fa-calendar me-1"></i>${newsItem?.author?.posted_date || 'No publish date' }</p>
             <h2 class="card-title text-[#12132D]">${newsItem.title}</h2>
             <p>${newsItem.description}</p>
             <div class="card-actions flex justify-start">
             <div class="avatar">
             <div class="rounded-full w-12">
-              <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <img src="${newsItem?.profile_image}" />
             </div>
           </div>
           <div>
             <p class='font-bold'>${newsItem.author.name}</p>
-            <p>${newsItem.author?.designation || 'unknown'}</p>
+            <p>${newsItem.author?.designation || 'Unknown'}</p>
           </div>
             </div>
           </div>
